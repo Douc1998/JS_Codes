@@ -8,7 +8,7 @@
 const eventEmitter = require('events').EventEmitter;
 ```
 
-**下面我们自己实现了一个简易的[EventEmitter]()。**
+**下面我们自己实现了一个简易的[EventEmitter](https://github.com/Douc1998/EventEmitter-Wheel/blob/main/EventEmitter/EventEmitter.js)。**
 
 ## 依赖
 + JavaScript
