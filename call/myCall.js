@@ -1,5 +1,5 @@
 // 手写 call 方法：
-Function.prototype.myCall = function(thisArg, args){
+Function.prototype.myCall = function(thisArg, ...args){
     // 判断传入的参数
     let self = (typeof thisArg) ? thisArg : window;
     // 确保 key 的唯一性
@@ -7,7 +7,7 @@ Function.prototype.myCall = function(thisArg, args){
     // this 即为调用的函数
     self[key] = this;
     // 以 self 调用函数，函数的 this 指向 self
-    let res = self[key](args);
+    let res = self[key](...args);
     delete self[key];
     return res;
 }
