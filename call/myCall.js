@@ -1,7 +1,7 @@
 // 手写 call 方法：
 Function.prototype.myCall = function(thisArg, ...args){
     // 判断传入的参数
-    let self = (typeof thisArg) ? thisArg : window;
+    let self = (typeof thisArg === 'object') ? thisArg : window;
     // 确保 key 的唯一性
     const key = Symbol();
     // this 即为调用的函数
