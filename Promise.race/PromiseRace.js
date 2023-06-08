@@ -1,6 +1,7 @@
 // 手写 Promise.race
 const PromiseRace = (promises) => {
     return new Promise((resolve, reject) => {
+        if(promises.length === 0) return resolve([]);
         promises.forEach((element) => {
             // 防止不是 Promise 对象，利用 Promise.race 包装
             Promise.resolve(element).then((value) => resolve(value), (e) => reject(e));
