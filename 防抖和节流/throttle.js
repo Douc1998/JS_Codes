@@ -18,8 +18,8 @@ function throttle(fn, interval = 1000){
         const context = this; // 保存作用域
         const args = arguments; // 保存参数
         if(!timer){ // timer 也起到是否执行的标志，如果为 null 表示执行完毕可以再次执行，反之表示还没达到规定时间
-            fn.apply(context, args);
             timer = setTimeout(() => {
+                fn.apply(context, args);
                 timer = null;
             }, interval)
         }

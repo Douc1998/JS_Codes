@@ -5,7 +5,7 @@ class EventEmitter{
 
     // 注册事件
     on = (name, fn) => {
-        if(this.events[name]){ // 如果已经注册了name，fn加入数组
+        if(name in this.events){ // 如果已经注册了name，fn加入数组
             this.events[name].push(fn);
         }else{
             this.events[name] = [fn]
